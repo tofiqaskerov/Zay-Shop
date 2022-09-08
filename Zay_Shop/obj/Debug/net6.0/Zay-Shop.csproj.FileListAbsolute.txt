@@ -1,0 +1,9 @@
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.csproj.AssemblyReference.cache
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.GeneratedMSBuildEditorConfig.editorconfig
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.AssemblyInfoInputs.cache
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.AssemblyInfo.cs
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.csproj.CoreCompileInputs.cache
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.MvcApplicationPartsAssemblyInfo.cs
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.MvcApplicationPartsAssemblyInfo.cache
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.RazorAssemblyInfo.cache
+E:\Compar.Academy\csharp\Web\Zay_Shop\Zay_Shop\obj\Debug\net6.0\Zay-Shop.RazorAssemblyInfo.cs

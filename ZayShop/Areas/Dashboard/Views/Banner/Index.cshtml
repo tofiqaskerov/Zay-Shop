@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Banner>
+<style>
+    a {
+        margin-bottom: 10px;
+    }
+
+    td {
+        transition: .3s ease;
+    }
+
+        td:hover {
+            color: red;
+        }
+</style>
+
+@if (Model.Count() <= 2 )
+{
+    
+        <a class="btn btn-success mt-5 mb-4 " style=" width: 10%;" href="/dashboard/banner/create">Create</a>
+    
+}
+
+@if (Model.FirstOrDefault() != null)
+{
+    <div class="content">
+
+        <div class="table-responsive">
+
+            <table class="table table-striped custom-table">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Primary Text</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class=align-text-bottom>
+                    @foreach (var banner in Model)
+                    {
+                        <tr scope="row" class="font-weight-bold">
+                            <td>
+                                @banner.Id
+                            </td>
+                            <td>@banner.Title</td>
+                            <td>
+                                @banner.PrimaryText
+                            </td>
+                            <td>
+                                @Html.Raw(banner.Description)
+                            </td>
+                            <td>
+                                <div>
+                                    <img src="~/@banner.PhotoURL" width="200" height="150" />
+                                </div>
+                            </td>
+                            <td>
+                                <a style="color:#fff;" class="btn btn-warning" href="/dashboard/banner/edit/@banner.Id">Edit</a>
+                                <a banner-value="@banner.Id" style="color:#fff;" class=" btnSave btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+}
+else
+{
+    <div class="container">
+        <div class="alert text-center alert-info">Bazada melumat yoxdur</div>
+    </div>
+}
+
+
+@section Scripts {
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    $(".btnSave").click(function(e) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let bannerId = e.currentTarget.attributes[0].value
+                $.ajax({
+                    method: "POST",
+                    url: "banner/delete/",
+                    data: {
+                        id: bannerId
+                    }
+                })
+                Swal.fire({
+                    title: 'Deleted',
+                    text: "Banner is delete!",
+                    icon: 'success',
+
+                }).then((result) => {
+                    window.location = "banner"
+                })
+
+            }
+        })
+    })
+</script>
+}
+

@@ -1,0 +1,49 @@
+﻿
+<style>
+    input {
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div class="card shadow my-5">
+    <div class="card-body">
+        <form class="form-group" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-lg-12 my-2">
+                    <input class="form-control" placeholder="Title" type="text" name="Title" />
+                </div>
+                <div class="col-lg-12 my-2">
+                    <input class="form-control" placeholder="Primary Text" type="text" name="PrimaryText" />
+                </div>
+
+
+                <div class="col-lg-12 my-2">
+                    <textarea id="editor" class="form-control" placeholder="Description " type="text" name="Description"> </textarea>
+                </div>
+                <div class="col-lg-4 my-2">
+                    <input type="file" name="NewPhoto" accept = ".jpg, .png" id="file" class="inputfile" />
+                   
+                </div>
+
+            </div>
+            <input type="submit" value="Create" class="btn btn-outline-success mt4" />
+             <div class="mb-5">
+                <a class="btn btn-success" href="/dashboard/banner">Return Index</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+}
