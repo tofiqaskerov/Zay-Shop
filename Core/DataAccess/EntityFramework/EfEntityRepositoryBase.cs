@@ -20,7 +20,7 @@ namespace Core.DataAccess.EntityFramework
             using TContext context = new();
             var addEntity = context.Entry(entity);
             addEntity.State = EntityState.Added;
-            context.SaveChangesAsync();
+            context.SaveChanges();
         }
 
         public void Delete(TEntity entity)

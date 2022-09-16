@@ -1,6 +1,7 @@
 using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Abstract;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntitieFramework;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IBannerManager, BannerManager>();
 builder.Services.AddScoped<IBannerDal, BannerDal>();
+builder.Services.AddScoped<ICategoryManager, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal, CategoryDal>();
+
 
 var app = builder.Build();
 

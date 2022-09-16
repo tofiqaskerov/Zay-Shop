@@ -1,0 +1,54 @@
+﻿@model Category
+
+
+
+<form enctype="multipart/form-data" method="post">
+    <div class="container">
+        <div class="row">
+            <div class="input-group my-2">
+                <label class="font-weight-bold">Name</label>
+            </div>
+            <div class="input-group my-2">
+                <input asp-for="Name" class="form-control" type="text" placeholder="Title" />
+
+            </div>
+            <span asp-validation-for="Name"></span>
+
+
+            <div class="input-group my-2">
+                <label class="font-weight-bold">Photo</label>
+            </div>
+            <div class="input-group my-2">
+                <input name="NewPhoto" accept=".jpg, .png" class="form-control" type="file" placeholder="PhotoURL" />
+                <br />
+                @{
+                    var photoUrl = Model.PhotoURL;
+                    var photoViewBag = ViewBag.Photo;
+                    <input type="hidden" name="oldPhoto" value="@(Model.PhotoURL == null ? photoViewBag  : photoUrl)" />
+                }
+                <input type="hidden" name="Id" value="@Model.Id" />
+            </div>
+
+        </div>
+        <div class="input-group my-2">
+            <div class="card">
+                <div class="card-body">
+                    <br />
+                    @{
+                        
+                        <img height="200" src="~/@(Model.PhotoURL == null ? photoViewBag  : photoUrl)" />
+
+                    }
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary my-2" value="Save" />
+        <div @*class="mt-5"*@>
+            <a class="btn btn-success" href="/dashboard/category">Return Index</a>
+        </div>
+        <h3>@ViewBag.NameError</h3>
+    </div>
+</form>
+
+
+

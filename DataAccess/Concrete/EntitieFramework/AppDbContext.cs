@@ -16,5 +16,6 @@ namespace DataAccess.Concrete.EntitieFramework
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Zay_ShopDb;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
         public DbSet<Banner> Banners { get; set; }   
+        public DbSet<Category> Categories { get; set; }
     }
 }

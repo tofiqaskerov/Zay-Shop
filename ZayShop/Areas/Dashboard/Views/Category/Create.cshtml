@@ -1,0 +1,24 @@
+﻿@model Category
+<style>
+    input {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="card shadow my-5">
+    <div class="card-body">
+        <form class="form-group" method="post" enctype="multipart/form-data">
+            <input class="form-control" asp-for="Name" type="text" placeholder="Category Name" />
+            <span asp-validation-for="Name"></span>
+            <br />
+            <input class="form-control" type="file" name="NewPhoto" />
+            <span>@ViewBag.PhotoError</span>
+
+            <br />
+            <input type="submit" value="Create" class="btn btn-outline-success" />
+            <div>
+                <a class="btn btn-success" href="/dashboard/category">Return Index</a>
+            </div>
+        </form>
+    </div>
+</div>

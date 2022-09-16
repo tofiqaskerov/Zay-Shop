@@ -10,21 +10,24 @@ namespace ZayShop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IBannerManager _bannerManager;
+        private readonly ICategoryManager _categoryManager;
 
 
-
-        public HomeController(ILogger<HomeController> logger, IBannerManager bannerManager)
+        public HomeController(ILogger<HomeController> logger, IBannerManager bannerManager, ICategoryManager categoryManager)
         {
             _logger = logger;
             _bannerManager = bannerManager;
+            _categoryManager = categoryManager;
         }
 
         public IActionResult Index()
         {
             var banners = _bannerManager.GetAll();
+            var categories = _categoryManager.GetAll();
             HomeVM homeVM = new()
             {
                 Banners = banners,
+                Categories = categories
             };
 
             return View(homeVM);
